@@ -1,0 +1,65 @@
+#msgModal1{
+    margin-left: 22.8%;
+}
+
+#msgModal2{
+    margin-left: 20%;
+}
+
+#btnYes{
+    margin-right: 2%;
+    margin-left: 22%;
+    padding-left: 9%; 
+    padding-right: 9%; 
+}
+
+#deleteAll{
+    margin-left: 2.5%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+}
+
+#deleteLast{
+    margin-bottom: 2%;
+}
+
+.listContainer{
+    width: 60%;
+    margin-top: 8%;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 15px;
+}
+
+.modalAux {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px #333;
+    min-width: 320px;
+    position: fixed;
+    left: 50%;
+    padding: 24px;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+}
+  
+.overlay {
+    background: #000;
+    height: 100vh;
+    left: 0;
+    opacity: 0.5;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 10;
+}
+
+svg{
+    margin-left: 33%;
+    margin-bottom: 3%;
+}
+
+.alertDelete{
+    margin-top: 3%;
+}

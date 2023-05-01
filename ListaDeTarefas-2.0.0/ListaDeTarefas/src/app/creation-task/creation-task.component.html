@@ -1,0 +1,43 @@
+<br>
+<div id="createdSuccess" *ngIf="alertSuccess" class="alert alert-success" role="alert">
+    <i class="bi bi-check-circle-fill"></i>
+    Task created with success!
+</div>
+<div id="emptyError" *ngIf="alertError" class="alert alert-danger" role="alert">
+    <i class="bi bi-exclamation-circle-fill"></i>
+    Task can't be empty!
+</div>
+
+<h1>Task List</h1>
+
+<div class="row row-cols-1 ">
+
+    <div class="col">
+
+        <label>
+            <i class="bi bi-list-task"></i>
+            Task
+        </label>
+        <!-- send the value of the input for the taskNameInput variable -->
+        <input id="taskInput" type="text" class="form-control" placeholder="Type your task...." [(ngModel)]="taskNameInput">
+
+    </div>
+
+    <div class="col">
+        <!-- functions for Low, Medium and High task -->
+        <button id="btnLowTask" class="btn btn-success" (click)="onAddLowTask()">
+            <i class="bi bi-plus-circle-dotted"></i>
+            Create Low Task
+        </button>
+        <button id="btnMediumTask" class="btn btn-warning" (click)="onAddMediumTask()">
+            <i class="bi bi-plus-circle-dotted"></i>
+            Create Medium Task
+        </button>
+        <button id="btnHighTask" class="btn btn-danger" (click)="onAddHighTask()">
+            <i class="bi bi-plus-circle-dotted"></i>
+            Create High Task
+        </button>
+    </div>
+
+</div>
+

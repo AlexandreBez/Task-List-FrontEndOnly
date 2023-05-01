@@ -1,0 +1,84 @@
+<app-loading *ngIf="isLoading"></app-loading>
+
+<!-- header -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+
+        <!-- user area -->
+        <span class="navbar-brand mb-0 mt-3 me-4" *ngIf="isAuthenticated">
+            <div class="dropdown pb-2">
+
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                    id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://avatars.githubusercontent.com/u/61715273?s=400&u=009b60211ce1f4f56a5b7dd24e497accbd992011&v=4"
+                        alt="hugenerd" width="30" height="30" class="rounded-circle">
+                    <span class="d-none d-sm-inline mx-1">Lucas Alexandre</span>
+                </a>
+
+                <ul class="dropdown-menu dropdown-menu-dark text-small shadow ">
+                    <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                        <a class="dropdown-item" routerLink="Settings">
+                            <i class="bi bi-gear"></i>
+                            Settings
+                        </a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li>
+                        <a class="dropdown-item" (click)="OnLogout()">
+                            <i class="bi bi-door-closed"></i>
+                            Sign out
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </span>
+
+        <!-- navigation area -->
+        <div *ngIf="isAuthenticated" class="navbar align-items-center navigation-area" id="navbarSupportedContent">
+
+            <ul class="navbar-nav me-4 mb-2 mb-lg-0">
+
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" routerLink="Home">
+                        <i class="bi bi-house"></i>
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" routerLink="CreateTask">
+                        <i class="bi bi-clipboard-plus"></i>
+                        Create Task
+                    </a>
+                </li>
+
+                <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                    <a class="nav-link" routerLink="MyTasks">
+                        <i class="bi bi-clipboard-data"></i>
+                        My Tasks
+                    </a>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <!-- brand -->
+        <span class="navbar-brand mb-0 h1 ">
+            <button *ngIf="isAuthenticated" class="btn btn-primary me-1" (click)="reloadTasks()">
+                <i class="bi bi-arrow-clockwise"></i>
+                Reload
+            </button>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list-check"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3.854 2.146a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 3.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 7.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z" />
+            </svg>
+            Pocket Tasks
+        </span>
+    </div>
+</nav>

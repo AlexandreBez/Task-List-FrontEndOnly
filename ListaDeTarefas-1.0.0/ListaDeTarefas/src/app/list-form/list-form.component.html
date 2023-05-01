@@ -1,0 +1,74 @@
+<div class="container listContainer">
+
+    <div class="container">
+        
+        <h1>Task List</h1>
+
+        <div id="errorAlert" [hidden]="errorMsg === false" class="alert alert-danger" role="alert">
+            Task can be empty.
+        </div>
+
+
+        <div class="row row-cols-1 ">
+
+            <div class="col">
+            
+                <label>
+                    <i class="bi bi-list-task"></i>
+                    Task
+                </label>
+                <input id="taskInput" type="text" class="form-control" placeholder="Type your task...." [(ngModel)] = "task">
+            
+            </div>
+    
+            <div class="col">
+
+                <label>Priotity*</label>
+                
+                <div class="form-check">
+                    <input id="taskInput" class="form-check-input" type="radio" name="flexRadioDefault" [checked]="low" (change)="low = !low">
+                    <label class="form-check-label">
+                      Low
+                    </label>
+                </div>
+        
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" [checked]="high" (change)="high = !high">
+                    <label class="form-check-label">
+                      High
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="btn btn-primary" (click)="createTask()" >Create Task</button>
+
+    </div>
+
+    <div class="container">
+
+        <table class="table table-striped">
+            
+            <thead class="table-dark">
+                <tr>
+                  <th>Task</th>
+                  <th>Remove</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let listTask of taskDesc">
+                  <td 
+                    [ngStyle]="{backgroundColor: priority == 'low' ? 'green' : 'red'}"
+                    [ngClass]="{'color': 'white'}" 
+                    id="colTask">{{ listTask }}</td>
+                  <td id="colRemove"> <a id="removeButton" href="#" (click)="removeTask()"><i class="bi bi-trash"></i></a> </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

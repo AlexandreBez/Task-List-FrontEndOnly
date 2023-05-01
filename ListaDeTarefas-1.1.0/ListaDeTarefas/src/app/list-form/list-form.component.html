@@ -1,0 +1,88 @@
+<ng-container *ngIf="errorMsg">
+    <div class="modalAux">
+        <p>Values can't be empty.</p>
+        <button id="btnClose" class="btn btn-dark" (click)="closeErrorMsg()">Ok</button>
+    </div>
+    <div class="overlay">
+    </div>
+</ng-container>
+
+<div class="container listContainer">
+
+    <div class="container">
+        
+        <h1>Task List</h1>
+
+        <div class="row row-cols-1 ">
+
+            <div class="col">
+            
+                <label>
+                    <i class="bi bi-list-task"></i>
+                    Task
+                </label>
+                <input id="taskInput" type="text" class="form-control" placeholder="Type your task...." [(ngModel)] = "task">
+            
+            </div>
+    
+            <div class="col">
+
+                <label>Priotity*</label>
+                
+                <div class="form-check">
+                    <input id="taskInput" class="form-check-input" type="radio" name="flexRadioDefault" (change)="low ? !low : !high">
+                    <label class="form-check-label">
+                      Low
+                    </label>
+                </div>
+        
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" (change)="high ? !high : !low">
+                    <label class="form-check-label">
+                      High
+                    </label>
+                </div>
+
+            </div>
+
+        </div>
+
+        <button class="btn btn-primary" (click)="createTask()" >Create Task</button>
+
+    </div>
+
+    <div class="container">
+
+        <table class="table table-striped">
+            
+            <thead class="table-dark">
+                <tr>
+                  <th>Task</th>
+                  <th>Priority</th>
+                  <th>Remove</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let listTask of listOfTasks">
+                    <td 
+                        [ngStyle]="{}"
+                        [ngClass]="{'color': 'white'}" 
+                        id="colTask">{{ listTask.task }}
+                    </td>
+                    
+                    <td>{{ listTask.priority }}</td>
+
+                    <td id="colRemove"> 
+                        <a id="removeButton" href="#" (click)="removeTask()">
+                            <i class="bi bi-trash"></i>
+                        </a> 
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>

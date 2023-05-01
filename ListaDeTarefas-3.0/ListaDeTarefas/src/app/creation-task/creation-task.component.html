@@ -1,0 +1,45 @@
+<app-loading *ngIf="isLoading"></app-loading>
+
+<!-- Success -->
+<div *ngIf="taskSuccess" id="createdSuccess" class="alert alert-success mt-2" role="alert">
+    <i class="bi bi-check-circle-fill"></i>
+    Task created with success!
+</div>
+
+<!-- form area -->
+<div class="row row-cols-1" *ngIf="!isLoading">
+
+    <form #taskForm="ngForm" (ngSubmit)="taskForm">
+
+        <div class="form-group mb-3 mt-3">
+            <label class="form-label">
+                <i class="bi bi-list-task"></i>
+                Task
+            </label>
+            <input type="text" class="form-control" placeholder="Type your task...." required ngModel name="task">
+        </div>
+
+        <div class="form-group mb-3">
+
+            <label class="form-label">
+                <i class="bi bi-bar-chart"></i>
+                Type
+            </label>
+            <select class="form-select form-control" required ngModel name="type">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+
+        </div>
+
+        <div class="form-group mb-3">
+            <button type="submit" class="btn btn-dark" (click)="onAddTask()" [disabled]="!taskForm.valid">
+                <i class="bi bi-plus-circle-dotted"></i>
+                Create Task
+            </button>
+        </div>
+
+    </form>
+
+</div>

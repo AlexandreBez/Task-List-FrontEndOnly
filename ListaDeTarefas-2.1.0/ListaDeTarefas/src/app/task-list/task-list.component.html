@@ -1,0 +1,24 @@
+
+    <p *ngIf="element.type === 'Low'" appBorderTask="2px solid black" style="background-color: rgba(4, 255, 4, 0.39);">
+        <strong>
+            {{ element.type }}
+        </strong>
+        <br>
+        <em>{{ element.task }}</em>
+    </p>
+
+    <p *ngIf="element.type === 'Medium'" appBorderTask="1px solid black" style="background-color: rgba(255, 251, 1, 0.39);">
+        <strong>
+            {{ element.type }}
+        </strong>
+        <br>
+        <em>{{ element.task }}</em>
+    </p>
+
+    <p *ngIf="element.type === 'High'" appBorderTask="1px solid black" style="background-color: rgba(255, 7, 7, 0.39);">
+        <strong>
+            {{ element.type }}
+        </strong>
+        <br>
+        <em>{{ element.task }}</em>
+    </p>
